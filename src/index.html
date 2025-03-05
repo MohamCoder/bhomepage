@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Google Autocomplete</title>
+  </head>
+  <body>
+    <div id="app" class="font-bold text-2xl text-secondary mt-8 ml-8">homepage</div>
+    <div class="flex gap-2 min-w-2xl mx-64 mt-4">
+      <input
+        type="text"
+        class="input w-full"
+        placeholder="Search Google or type a URL"
+        list="suggestions"
+        id="search_bar"
+      />
+      <datalist id="suggestions"> </datalist>
+      <button class="btn btn-outline btn-primary" id="search_button">Search</button>
+    </div>
+
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
