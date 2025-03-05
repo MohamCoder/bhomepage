@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="luxury">
+<html lang="en" theme-data="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,18 +7,49 @@
     <title>Google Autocomplete</title>
   </head>
   <body>
-    <div id="app" class="font-bold text-2xl mt-8 ml-8">homepage</div>
+    <select class="select absolute top-4 right-4" id="theme_selector">
+      <option disabled selected>Dark</option>
+    </select>
+    <div id="app" class="font-bold text-9xl w-full text-center mt-64 mb-24">
+      PEAK
+    </div>
     <div class="flex gap-2 lg:max-w-5xl md:max-w-3xl max-w-xl mx-auto mt-4">
       <input
         type="text"
         class="input w-full"
-        placeholder="Search Google or type a URL"
+        placeholder="Search Google"
         list="suggestions"
         id="search_bar"
       />
-      <datalist id="suggestions"> </datalist>
-      <button class="btn btn-outline btn-primary" id="search_button">Search</button>
+      <datalist id="suggestions">
+        <option class="text-stone-800"></option>
+      </datalist>
+      <button class="btn btn-outline btn-primary" id="search_button">
+        Search
+      </button>
     </div>
+    <div
+      class="flex gap-2 lg:max-w-5xl md:max-w-3xl max-w-xl mx-auto mt-4"
+      id="shortcuts_container"
+    ></div>
+    <!-- You can open the modal using ID.showModal() method -->
+
+    <dialog id="my_modal_3" class="modal">
+      <div class="modal-box">
+        <p class="font-bold text-lg mb-4">Add a link</p>
+        <form method="dialog">
+          <div class="w-full gap-2 flex flex-row items-center justify-center">
+            <input
+              class="input"
+              placeholder="enter a url eg:example.com"
+              id="shortcut_input"
+              autocomplete="off"
+            />
+            <button class="btn btn-primary" id="add_shortcut">add</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
 
     <script type="module" src="./index.js"></script>
   </body>
