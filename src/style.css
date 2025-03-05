@@ -11,11 +11,15 @@
     --container-xl: 36rem;
     --container-3xl: 48rem;
     --container-5xl: 64rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --text-lg: 1.125rem;
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-9xl: 8rem;
     --text-9xl--line-height: 1;
     --font-weight-bold: 700;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-font-feature-settings: var(--font-sans--font-feature-settings);
     --default-font-variation-settings: var(--font-sans--font-variation-settings);
@@ -505,14 +509,26 @@
       cursor: not-allowed;
     }
   }
+  .avatar {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    & > div {
+      display: block;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
   .absolute {
     position: absolute;
   }
   .top-4 {
     top: calc(var(--spacing) * 4);
-  }
-  .right-4 {
-    right: calc(var(--spacing) * 4);
   }
   .left-4 {
     left: calc(var(--spacing) * 4);
@@ -545,9 +561,6 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
-  .mt-64 {
-    margin-top: calc(var(--spacing) * 64);
-  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
@@ -557,11 +570,29 @@
   .flex {
     display: flex;
   }
+  .h-24 {
+    height: calc(var(--spacing) * 24);
+  }
+  .w-24 {
+    width: calc(var(--spacing) * 24);
+  }
+  .w-32 {
+    width: calc(var(--spacing) * 32);
+  }
   .w-full {
     width: 100%;
   }
   .max-w-xl {
     max-width: var(--container-xl);
+  }
+  .scale-50 {
+    --tw-scale-x: 50%;
+    --tw-scale-y: 50%;
+    --tw-scale-z: 50%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .transform {
+    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y);
   }
   .link {
     cursor: pointer;
@@ -578,6 +609,9 @@
       outline-offset: 2px;
     }
   }
+  .flex-col {
+    flex-direction: column;
+  }
   .flex-row {
     flex-direction: row;
   }
@@ -590,6 +624,9 @@
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
+  .fill-secondary {
+    fill: var(--color-secondary);
+  }
   .text-center {
     text-align: center;
   }
@@ -601,12 +638,25 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
   .text-stone-800 {
     color: var(--color-stone-800);
+  }
+  .transition-all {
+    transition-property: all;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
   }
   .btn-outline {
     &:not(.btn-active, :hover, :active:focus, :focus-visible, :disabled, [disabled], .btn-disabled) {
@@ -1954,7 +2004,51 @@
     opacity: 1;
   }
 }
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-rotate-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateX(0);
+}
+@property --tw-rotate-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateY(0);
+}
+@property --tw-rotate-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: rotateZ(0);
+}
+@property --tw-skew-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewX(0);
+}
+@property --tw-skew-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: skewY(0);
+}
 @property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-duration {
   syntax: "*";
   inherits: false;
 }
