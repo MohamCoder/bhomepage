@@ -9,5 +9,5 @@ Welcome to **bHomepage** – a next-level, fully customizable homepage that outs
 - **Sleek & Intuitive Design:** Outclassing even the goofiest of traditional homepages, bHomepage is designed with both style and function in mind, ensuring that your digital space is as productive as it is beautiful.
 - **Effortless Management:** With built-in JavaScript controls, managing your shortcuts is as easy as a right-click. Remove or rearrange elements on the fly to suit your needs.
 
-> **Pro Tip:** Enjoy complete control—right-click on any shortcut to remove it.
+**Pro Tip:** Enjoy complete control—right-click on any shortcut to remove it.
 Make bHomepage your go-to homepage and experience the perfect blend of customization, functionality, and style. Elevate your browsing experience today!
