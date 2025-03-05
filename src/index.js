@@ -50,7 +50,7 @@ theme_selector.addEventListener("change", () => {
 
 
 let debounceTimer;
-let shortcuts = JSON.parse(localStorage.getItem("shortcuts")) || ["youtube.com","spotify.com"];
+let shortcuts = JSON.parse(localStorage.getItem("shortcuts")) || [];
 document.documentElement.setAttribute("data-theme", localStorage.getItem("selectedTheme") || "dark");
 theme_selector.value = localStorage.getItem("selectedTheme") || "dark";
 
